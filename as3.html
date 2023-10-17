@@ -8,8 +8,7 @@
 * {
   box-sizing: border-box;
 }
-
-/* Style the body */
+ /* Style the body */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
@@ -92,22 +91,209 @@ body {
   padding: 20px;
   text-align: center;
   background: #ddd;
-}
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
   }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
   }
-}
+@media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+
 </style>
 </head>
 <body>
@@ -128,315 +314,400 @@ body {
 
   <div class="main">
     <h2>Housing</h2>
-    <h5>Question one</h5>
-    <div class="fakeimg" style="height:200px;">
 
-
-
-      
-      
-    </div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br>
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>
-What will Amsterdam receive from tourist tax if the event lasts a week and you will have 30.000 visitors?
-
-When looking at the benefits for Amsterdam, the tourist tax is a significant benefit of organising a big event like this. Let’s say the 7-day event will bring 30.000 visitors to Amsterdam, all staying in the city. The event will be hosted in May 2024, so looking at the average cost of overnight accommodation in Amsterdam in the same period this year, shows a nightly price of €294,00 (Statista, 2023). The city of Amsterdam regulates a 3€ + 7% tourist tax on hotel stays (Amsterdam, 2023). This brings the total amount of tourist tax income to €49,431,000.
-
-An important note to make is that the tax on holiday rentals, bed & breakfasts and short-stay accommodations is 10% of the turnover, excluding VAT and tourist tax. The total amount of tourist tax income will be significantly higher when taking these additional elements into consideration. In 2023, 8386 accommodations were listed on Airbnb. What share of event visitors will choose to stay in an Airbnb over another form of accommodation is unknown.
-
-One additional comment to make it that the €49,431,00 only includes tourist tax from overnight accommodation in Amsterdam and excludes all the tourist tax on expenses the visitors make while attending the event, think about food, drinks, activities etc.
-
-Plot the amount of Airbnb locations per neighborhood.
-
-import pandas as pd
-import matplotlib.pyplot as plt
-
-# Loading my Airbnb dataset
-df = pd.read_csv('listingss.csv')
-
-# Grouping by neighborhood and counting the number of listings in each neighborhood
-neighborhood_counts = df['neighbourhood'].value_counts()
-
-# Creating a bar plot
-plt.figure(figsize=(12, 6))
-neighborhood_counts.plot(kind='bar')
-plt.title('Number of Airbnb Listings per Neighborhood in Amsterdam')
-plt.xlabel('neighbourhood')
-plt.ylabel('Number of Listings')
-plt.xticks(rotation=90)  
-plt.tight_layout()
-plt.show()
-
-
-Which street in Amsterdam has the most Airbnb apartments?
-
-Step one: create a new database where the coordinates from the database can be converted to street names:
-
-Note: The table airbnb_listings only needs to be created once, hence the error as the outcome in the the first part of the code.
-
-import sqlite3
-
-
-new_db_path = 'new_database.db'
-
-# Create a new SQLite database file
-new_conn = sqlite3.connect(new_db_path)
-new_cursor = new_conn.cursor()
-
-# Create a table to store Airbnb listings
-new_cursor.execute('''
-    CREATE TABLE airbnb_listings (
-        id INTEGER PRIMARY KEY,
-        latitude REAL,
-        longitude REAL
-    )
-''')
-
-# Insert sample data into the table 
-new_cursor.execute("INSERT INTO airbnb_listings (latitude, longitude) VALUES (52.3766, 4.9001)")
-new_cursor.execute("INSERT INTO airbnb_listings (latitude, longitude) VALUES (52.3792, 4.9003)")
-
-# Commit changes and close the new database connection
-new_conn.commit()
-new_conn.close()
-
-print("New database created and data imported.")
----------------------------------------------------------------------------
+<div id="286d3a0e" class="cell markdown">
+<h2
+id="what-will-amsterdam-receive-from-tourist-tax-if-the-event-lasts-a-week-and-you-will-have-30000-visitors">What
+will Amsterdam receive from tourist tax if the event lasts a week and
+you will have 30.000 visitors?</h2>
+</div>
+<div id="1eed4b70" class="cell markdown">
+<p>When looking at the benefits for Amsterdam, the tourist tax is a
+significant benefit of organising a big event like this. Let’s say the
+7-day event will bring 30.000 visitors to Amsterdam, all staying in the
+city. The event will be hosted in May 2024, so looking at the average
+cost of overnight accommodation in Amsterdam in the same period this
+year, shows a nightly price of €294,00 (Statista, 2023). The city of
+Amsterdam regulates a 3€ + 7% tourist tax on hotel stays (Amsterdam,
+2023). This brings the total amount of tourist tax income to
+€49,431,000.</p>
+<p>An important note to make is that the tax on holiday rentals, bed
+&amp; breakfasts and short-stay accommodations is 10% of the turnover,
+excluding VAT and tourist tax. The total amount of tourist tax income
+will be significantly higher when taking these additional elements into
+consideration. In 2023, 8386 accommodations were listed on Airbnb. What
+share of event visitors will choose to stay in an Airbnb over another
+form of accommodation is unknown.</p>
+<p>One additional comment to make it that the €49,431,00 only includes
+tourist tax from overnight accommodation in Amsterdam and excludes all
+the tourist tax on expenses the visitors make while attending the event,
+think about food, drinks, activities etc.</p>
+</div>
+<div id="3a108890" class="cell markdown">
+<h2 id="plot-the-amount-of-airbnb-locations-per-neighborhood">Plot the
+amount of Airbnb locations per neighborhood.</h2>
+</div>
+<div id="71c3f9bc" class="cell code" data-execution_count="14">
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Loading my Airbnb dataset</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.read_csv(<span class="st">&#39;listingss.csv&#39;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Grouping by neighborhood and counting the number of listings in each neighborhood</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>neighborhood_counts <span class="op">=</span> df[<span class="st">&#39;neighbourhood&#39;</span>].value_counts()</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Creating a bar plot</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">12</span>, <span class="dv">6</span>))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>neighborhood_counts.plot(kind<span class="op">=</span><span class="st">&#39;bar&#39;</span>)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">&#39;Number of Airbnb Listings per Neighborhood in Amsterdam&#39;</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">&#39;neighbourhood&#39;</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">&#39;Number of Listings&#39;</span>)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>plt.xticks(rotation<span class="op">=</span><span class="dv">90</span>)  </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div>
+<div class="output display_data">
+<p><img
+src="vertopal_37504f14d0a1455d986054212549b407/244320c08c86048e7041555d2c6f387f57b6a1cd.png" /></p>
+</div>
+</div>
+<div id="1d03fe6e" class="cell markdown">
+<h2 id="which-street-in-amsterdam-has-the-most-airbnb-apartments">Which
+street in Amsterdam has the most Airbnb apartments?</h2>
+</div>
+<div id="2ffb7910" class="cell markdown">
+<p>Step one: create a new database where the coordinates from the
+database can be converted to street names:</p>
+</div>
+<div id="e052ddca" class="cell markdown">
+<p>Note: The table airbnb_listings only needs to be created once, hence
+the error as the outcome in the the first part of the code.</p>
+</div>
+<div id="e46ef927" class="cell code" data-execution_count="3">
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>new_db_path <span class="op">=</span> <span class="st">&#39;new_database.db&#39;</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a new SQLite database file</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>new_conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(new_db_path)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>new_cursor <span class="op">=</span> new_conn.cursor()</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a table to store Airbnb listings</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>new_cursor.execute(<span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="st">    CREATE TABLE airbnb_listings (</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="st">        id INTEGER PRIMARY KEY,</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="st">        latitude REAL,</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="st">        longitude REAL</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="st">    )</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span>)</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Insert sample data into the table </span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>new_cursor.execute(<span class="st">&quot;INSERT INTO airbnb_listings (latitude, longitude) VALUES (52.3766, 4.9001)&quot;</span>)</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>new_cursor.execute(<span class="st">&quot;INSERT INTO airbnb_listings (latitude, longitude) VALUES (52.3792, 4.9003)&quot;</span>)</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit changes and close the new database connection</span></span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>new_conn.commit()</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>new_conn.close()</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;New database created and data imported.&quot;</span>)</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a></span></code></pre></div>
+<div class="output error" data-ename="OperationalError"
+data-evalue="table airbnb_listings already exists">
+<pre><code>---------------------------------------------------------------------------
 OperationalError                          Traceback (most recent call last)
 Cell In[3], line 11
       8 new_cursor = new_conn.cursor()
      10 # Create a table to store Airbnb listings
----> 11 new_cursor.execute('''
+---&gt; 11 new_cursor.execute(&#39;&#39;&#39;
      12     CREATE TABLE airbnb_listings (
      13         id INTEGER PRIMARY KEY,
      14         latitude REAL,
      15         longitude REAL
      16     )
-     17 ''')
+     17 &#39;&#39;&#39;)
      19 # Insert sample data into the table (replace with your own data)
-     20 new_cursor.execute("INSERT INTO airbnb_listings (latitude, longitude) VALUES (52.3766, 4.9001)")
+     20 new_cursor.execute(&quot;INSERT INTO airbnb_listings (latitude, longitude) VALUES (52.3766, 4.9001)&quot;)
 
 OperationalError: table airbnb_listings already exists
-Step two: convert the coordinates from the database to street names using the geocoder method.
-
-import sqlite3
-from geopy.geocoders import Nominatim
-
-# Initialize the Nominatim geocoder
-geolocator = Nominatim(user_agent="reverse_geocode")
-
-# Connect to the existing database
-db_path = 'new_database.db'  # Update with the correct path
-conn = sqlite3.connect(db_path)
-cursor = conn.cursor()
-
-# Check if the 'street_name' column exists; if not, create it
-cursor.execute('''
-    PRAGMA table_info(airbnb_listings)
-''')
-columns = [column[1] for column in cursor.fetchall()]
-if 'street_name' not in columns:
-    cursor.execute('''
-        ALTER TABLE airbnb_listings
-        ADD COLUMN street_name TEXT
-    ''')
-
-# Fetch latitude and longitude coordinates from the database
-cursor.execute("SELECT id, latitude, longitude FROM airbnb_listings")
-rows = cursor.fetchall()
-
-# Update the street names in the database
-for row in rows:
-    listing_id, latitude, longitude = row[0], row[1], row[2]
-    location = f"{latitude}, {longitude}"
-
-    try:
-        location_info = geolocator.reverse(location, language="en", timeout=10)
-        if location_info:
-            address = location_info.address
-            street_name = address.split(', ')[1]
-
-            # Update the 'street_name' column for the listing
-            cursor.execute("UPDATE airbnb_listings SET street_name = ? WHERE id = ?", (street_name, listing_id))
-    except Exception as e:
-        print(f"Error: {str(e)}")
-
-# Commit changes and close the database connection
-conn.commit()
-conn.close()
-
-print("Street names updated in the database.")
-Error: HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Max retries exceeded with url: /reverse?lat=52.3766&lon=4.9001&format=json&accept-language=en&addressdetails=1 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')))
-Error: HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Max retries exceeded with url: /reverse?lat=52.3792&lon=4.9003&format=json&accept-language=en&addressdetails=1 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')))
-Street names updated in the database.
-Step 3: now the new database is created. From here you can get the information on the street with the most Airbnb listings by using the following code:
-
-import sqlite3
-
-# Connect to the database
-db_path = 'new_database.db'  
-conn = sqlite3.connect(db_path)
-cursor = conn.cursor()
-
-# SQL query to count listings by street name
-query = '''
-    SELECT street_name, COUNT(*) AS listing_count
-    FROM airbnb_listings
-    WHERE street_name IS NOT NULL
-    GROUP BY street_name
-    ORDER BY listing_count DESC
-'''
-
-# Execute the query
-cursor.execute(query)
-
-# Fetch the result (first row represents the street with the most listings)
-result = cursor.fetchone()
-
-if result:
-    most_listed_street = result[0]
-    max_listings = result[1]
-
-    print(f"The street with the most Airbnb listings is '{most_listed_street}' with {max_listings} listing.")
-else:
-    print("No street names found in the database.")
-
-# Close the database connection
-conn.close()
-The street with the most Airbnb listings is 'Stationsplein' with 1 listing.
-This leads to the following result: The street with the most Airbnb listings is 'Stationsplein'. This result is not very trustworthy since only a paid service from google API was able to handle this big size of datasets.
-
-Try to cross reference the data from the AirBnB dataset with the BBGA. Can you figure out if all apartments of AirBnB are designated as housing? Which number of apartments are not rented out all the time but are also used as normal housing?
-
-import pandas as pd
-
-# Load Airbnb dataset
-airbnb_df = pd.read_csv('listingss.csv')
-
-# Load BBGA dataset
-bbga_df = pd.read_csv('listingss.csv')
-
-radius_km = 1  
-
-from math import radians, sin, cos, sqrt, atan2
-
-def haversine(lat1, lon1, lat2, lon2):
-    # Radius of the Earth in kilometers
-    R = 6371.0
-
-    # Convert latitude and longitude from degrees to radians
-    lat1 = radians(lat1)
-    lon1 = radians(lon1)
-    lat2 = radians(lat2)
-    lon2 = radians(lon2)
-
-    # Differences in coordinates
-    dlon = lon2 - lon1
-    dlat = lat2 - lat1
-
-    # Haversine formula
-    a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
-    c = 2 * atan2(sqrt(a), sqrt(1 - a))
-
-    # Calculate the distance
-    distance = R * c
-
-    return distance
-
-
-
-# Step 1: Preprocess Data
-
-# Step 2: Identify Airbnb Listings in Housing Areas
-# You need to match Airbnb listings with housing areas from BBGA.
-# Define a radius or boundaries for matching.
-
-# Assuming you have latitude and longitude columns in both datasets
-def match_listings_to_housing_areas(airbnb_df, bbga_df, radius_km):
-    matched_listings = []
-
-    for _, airbnb_row in airbnb_df.iterrows():
-        airbnb_lat = airbnb_row['latitude']
-        airbnb_lon = airbnb_row['longitude']
-
-        for _, bbga_row in bbga_df.iterrows():
-            bbga_lat = bbga_row['latitude']
-            bbga_lon = bbga_row['longitude']
-
-            # Calculate distance between Airbnb listing and BBGA housing area
-            distance_km = haversine(airbnb_lat, airbnb_lon, bbga_lat, bbga_lon)
-
-            if distance_km <= radius_km:
-                matched_listings.append(airbnb_row)
-                break
-
-    return pd.DataFrame(matched_listings)
-
-# Step 3: Distinguish Long-Term Rentals
-# You need to identify listings available for extended periods.
-
-def find_long_term_rentals(airbnb_df, threshold_days):
-    long_term_rentals = airbnb_df[airbnb_df['availability_365'] > threshold_days]
-    return long_term_rentals
-
-# Step 4: Filter Listings Used as Normal Housing
-matched_listings = match_listings_to_housing_areas(airbnb_df, bbga_df, radius_km)
-long_term_rentals = find_long_term_rentals(matched_listings, 30)
-
-# Step 5: Count Apartments
-count_of_normal_housing = len(long_term_rentals)
-
-
-# output
-print(f"Number of apartments used as normal housing: {count_of_normal_housing}")
-Number of apartments used as normal housing: 3800
-The number of apartments used as normal housing is 3800
-
-How many hotel rooms should be built if Amsterdam wants to accommodate the same number of tourists?
-
-# Constants
-total_capacity_airbnb = 8386  
-average_length_of_stay_airbnb = 7  
-average_occupancy_rate_hotels = 0.75
-total_number_of_tourists_in_hotels = total_capacity_airbnb
-average_capacity_per_hotel_room = 2  # Assuming an average of 2 guests per hotel room
-
-# Calculate the number of hotel rooms needed
-number_of_hotel_rooms_needed = (total_number_of_tourists_in_hotels) / (average_occupancy_rate_hotels * average_length_of_stay_airbnb * average_capacity_per_hotel_room)
-
-print(f"To accommodate the same number of tourists as in Airbnb listings, Amsterdam should build approximately {number_of_hotel_rooms_needed:.0f} hotel rooms.")
-To accommodate the same number of tourists as in Airbnb listings, Amsterdam should build approximately 799 hotel rooms.
-How many different licenses are issued?
-
-#(6) How many different licenses are issued?
-listings = pd.read_csv("listings.csv")
-df = pd.DataFrame(listings)
-licenses = df["license"].nunique()
-print("", licenses)
- 7288
-The number of different licenses issued is 7288
-
-Amsterdam. (2023, October 15). Tourist tax (toeristenbelasting). English Site. https://www.amsterdam.nl/en/municipal-taxes/tourist-tax-(toeristenbelasting)/
-
-Data en informatie. (n.d.). https://data.amsterdam.nl/datasets/rl6-35tFAw2Ljw/basisbestand-gebieden-amsterdam-bbga/
-
-Get the Data. (n.d.). http://insideairbnb.com/get-the-data/
-
-Statista. (2023, July 6). Average cost of overnight accommodation in Amsterdam 2019-2023, by month. https://www.statista.com/statistics/614061/overnight-accommodation-costs-amsterdam-city/
-
-
-
-      
-    </p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-  </div>
+</code></pre>
 </div>
+</div>
+<div id="d38bb936" class="cell markdown">
+<p>Step two: convert the coordinates from the database to street names
+using the geocoder method.</p>
+</div>
+<div id="57bcef13" class="cell code" data-execution_count="15">
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> geopy.geocoders <span class="im">import</span> Nominatim</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize the Nominatim geocoder</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>geolocator <span class="op">=</span> Nominatim(user_agent<span class="op">=</span><span class="st">&quot;reverse_geocode&quot;</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to the existing database</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>db_path <span class="op">=</span> <span class="st">&#39;new_database.db&#39;</span>  <span class="co"># Update with the correct path</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(db_path)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if the &#39;street_name&#39; column exists; if not, create it</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="st">    PRAGMA table_info(airbnb_listings)</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span>)</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>columns <span class="op">=</span> [column[<span class="dv">1</span>] <span class="cf">for</span> column <span class="kw">in</span> cursor.fetchall()]</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">&#39;street_name&#39;</span> <span class="kw">not</span> <span class="kw">in</span> columns:</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>    cursor.execute(<span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="st">        ALTER TABLE airbnb_listings</span></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="st">        ADD COLUMN street_name TEXT</span></span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="st">    &#39;&#39;&#39;</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch latitude and longitude coordinates from the database</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>cursor.execute(<span class="st">&quot;SELECT id, latitude, longitude FROM airbnb_listings&quot;</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> cursor.fetchall()</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="co"># Update the street names in the database</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> rows:</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>    listing_id, latitude, longitude <span class="op">=</span> row[<span class="dv">0</span>], row[<span class="dv">1</span>], row[<span class="dv">2</span>]</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a>    location <span class="op">=</span> <span class="ss">f&quot;</span><span class="sc">{</span>latitude<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span>longitude<span class="sc">}</span><span class="ss">&quot;</span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a>        location_info <span class="op">=</span> geolocator.reverse(location, language<span class="op">=</span><span class="st">&quot;en&quot;</span>, timeout<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> location_info:</span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a>            address <span class="op">=</span> location_info.address</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a>            street_name <span class="op">=</span> address.split(<span class="st">&#39;, &#39;</span>)[<span class="dv">1</span>]</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Update the &#39;street_name&#39; column for the listing</span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>            cursor.execute(<span class="st">&quot;UPDATE airbnb_listings SET street_name = ? WHERE id = ?&quot;</span>, (street_name, listing_id))</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">except</span> <span class="pp">Exception</span> <span class="im">as</span> e:</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f&quot;Error: </span><span class="sc">{</span><span class="bu">str</span>(e)<span class="sc">}</span><span class="ss">&quot;</span>)</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Commit changes and close the database connection</span></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a>conn.commit()</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a>conn.close()</span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;Street names updated in the database.&quot;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Error: HTTPSConnectionPool(host=&#39;nominatim.openstreetmap.org&#39;, port=443): Max retries exceeded with url: /reverse?lat=52.3766&amp;lon=4.9001&amp;format=json&amp;accept-language=en&amp;addressdetails=1 (Caused by SSLError(SSLCertVerificationError(1, &#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)&#39;)))
+Error: HTTPSConnectionPool(host=&#39;nominatim.openstreetmap.org&#39;, port=443): Max retries exceeded with url: /reverse?lat=52.3792&amp;lon=4.9003&amp;format=json&amp;accept-language=en&amp;addressdetails=1 (Caused by SSLError(SSLCertVerificationError(1, &#39;[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)&#39;)))
+Street names updated in the database.
+</code></pre>
+</div>
+</div>
+<div id="676c66f7" class="cell markdown">
+<p>Step 3: now the new database is created. From here you can get the
+information on the street with the most Airbnb listings by using the
+following code:</p>
+</div>
+<div id="45784b53" class="cell code" data-execution_count="16">
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Connect to the database</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>db_path <span class="op">=</span> <span class="st">&#39;new_database.db&#39;</span>  </span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>conn <span class="op">=</span> sqlite3.<span class="ex">connect</span>(db_path)</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>cursor <span class="op">=</span> conn.cursor()</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># SQL query to count listings by street name</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>query <span class="op">=</span> <span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT street_name, COUNT(*) AS listing_count</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM airbnb_listings</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="st">    WHERE street_name IS NOT NULL</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="st">    GROUP BY street_name</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="st">    ORDER BY listing_count DESC</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="st">&#39;&#39;&#39;</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Execute the query</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>cursor.execute(query)</span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># Fetch the result (first row represents the street with the most listings)</span></span>
+<span id="cb6-21"><a href="#cb6-21" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> cursor.fetchone()</span>
+<span id="cb6-22"><a href="#cb6-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-23"><a href="#cb6-23" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> result:</span>
+<span id="cb6-24"><a href="#cb6-24" aria-hidden="true" tabindex="-1"></a>    most_listed_street <span class="op">=</span> result[<span class="dv">0</span>]</span>
+<span id="cb6-25"><a href="#cb6-25" aria-hidden="true" tabindex="-1"></a>    max_listings <span class="op">=</span> result[<span class="dv">1</span>]</span>
+<span id="cb6-26"><a href="#cb6-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-27"><a href="#cb6-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f&quot;The street with the most Airbnb listings is &#39;</span><span class="sc">{</span>most_listed_street<span class="sc">}</span><span class="ss">&#39; with </span><span class="sc">{</span>max_listings<span class="sc">}</span><span class="ss"> listing.&quot;</span>)</span>
+<span id="cb6-28"><a href="#cb6-28" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb6-29"><a href="#cb6-29" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;No street names found in the database.&quot;</span>)</span>
+<span id="cb6-30"><a href="#cb6-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-31"><a href="#cb6-31" aria-hidden="true" tabindex="-1"></a><span class="co"># Close the database connection</span></span>
+<span id="cb6-32"><a href="#cb6-32" aria-hidden="true" tabindex="-1"></a>conn.close()</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>The street with the most Airbnb listings is &#39;Stationsplein&#39; with 1 listing.
+</code></pre>
+</div>
+</div>
+<div id="a50102ca" class="cell markdown">
+<p>This leads to the following result: The street with the most Airbnb
+listings is 'Stationsplein'. This result is not very trustworthy since
+only a paid service from google API was able to handle this big size of
+datasets.</p>
+</div>
+<div id="3c13ac37" class="cell markdown">
+<h3
+id="try-to-cross-reference-the-data-from-the-airbnb-dataset-with-the-bbga-can-you-figure-out-if-all-apartments-of-airbnb-are-designated-as-housing-which-number-of-apartments-are-not-rented-out-all-the-time-but-are-also-used-as-normal-housing">Try
+to cross reference the data from the AirBnB dataset with the BBGA. Can
+you figure out if all apartments of AirBnB are designated as housing?
+Which number of apartments are not rented out all the time but are also
+used as normal housing?</h3>
+</div>
+<div id="4bba93a8" class="cell code" data-execution_count="12">
+<div class="sourceCode" id="cb8"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load Airbnb dataset</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>airbnb_df <span class="op">=</span> pd.read_csv(<span class="st">&#39;listingss.csv&#39;</span>)</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Load BBGA dataset</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>bbga_df <span class="op">=</span> pd.read_csv(<span class="st">&#39;listingss.csv&#39;</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>radius_km <span class="op">=</span> <span class="dv">1</span>  </span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> math <span class="im">import</span> radians, sin, cos, sqrt, atan2</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> haversine(lat1, lon1, lat2, lon2):</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Radius of the Earth in kilometers</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    R <span class="op">=</span> <span class="fl">6371.0</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Convert latitude and longitude from degrees to radians</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    lat1 <span class="op">=</span> radians(lat1)</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    lon1 <span class="op">=</span> radians(lon1)</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>    lat2 <span class="op">=</span> radians(lat2)</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    lon2 <span class="op">=</span> radians(lon2)</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Differences in coordinates</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    dlon <span class="op">=</span> lon2 <span class="op">-</span> lon1</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    dlat <span class="op">=</span> lat2 <span class="op">-</span> lat1</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Haversine formula</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> sin(dlat <span class="op">/</span> <span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span> <span class="op">+</span> cos(lat1) <span class="op">*</span> cos(lat2) <span class="op">*</span> sin(dlon <span class="op">/</span> <span class="dv">2</span>)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> atan2(sqrt(a), sqrt(<span class="dv">1</span> <span class="op">-</span> a))</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate the distance</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>    distance <span class="op">=</span> R <span class="op">*</span> c</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> distance</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 1: Preprocess Data</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 2: Identify Airbnb Listings in Housing Areas</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="co"># You need to match Airbnb listings with housing areas from BBGA.</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="co"># Define a radius or boundaries for matching.</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="co"># Assuming you have latitude and longitude columns in both datasets</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> match_listings_to_housing_areas(airbnb_df, bbga_df, radius_km):</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>    matched_listings <span class="op">=</span> []</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _, airbnb_row <span class="kw">in</span> airbnb_df.iterrows():</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>        airbnb_lat <span class="op">=</span> airbnb_row[<span class="st">&#39;latitude&#39;</span>]</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>        airbnb_lon <span class="op">=</span> airbnb_row[<span class="st">&#39;longitude&#39;</span>]</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> _, bbga_row <span class="kw">in</span> bbga_df.iterrows():</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>            bbga_lat <span class="op">=</span> bbga_row[<span class="st">&#39;latitude&#39;</span>]</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a>            bbga_lon <span class="op">=</span> bbga_row[<span class="st">&#39;longitude&#39;</span>]</span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>            <span class="co"># Calculate distance between Airbnb listing and BBGA housing area</span></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>            distance_km <span class="op">=</span> haversine(airbnb_lat, airbnb_lon, bbga_lat, bbga_lon)</span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> distance_km <span class="op">&lt;=</span> radius_km:</span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>                matched_listings.append(airbnb_row)</span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>                <span class="cf">break</span></span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame(matched_listings)</span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 3: Distinguish Long-Term Rentals</span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a><span class="co"># You need to identify listings available for extended periods.</span></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_long_term_rentals(airbnb_df, threshold_days):</span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>    long_term_rentals <span class="op">=</span> airbnb_df[airbnb_df[<span class="st">&#39;availability_365&#39;</span>] <span class="op">&gt;</span> threshold_days]</span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> long_term_rentals</span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 4: Filter Listings Used as Normal Housing</span></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>matched_listings <span class="op">=</span> match_listings_to_housing_areas(airbnb_df, bbga_df, radius_km)</span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a>long_term_rentals <span class="op">=</span> find_long_term_rentals(matched_listings, <span class="dv">30</span>)</span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a><span class="co"># Step 5: Count Apartments</span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>count_of_normal_housing <span class="op">=</span> <span class="bu">len</span>(long_term_rentals)</span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a><span class="co"># output</span></span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;Number of apartments used as normal housing: </span><span class="sc">{</span>count_of_normal_housing<span class="sc">}</span><span class="ss">&quot;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>Number of apartments used as normal housing: 3800
+</code></pre>
+</div>
+</div>
+<div id="05162fee" class="cell markdown">
+<p>The number of apartments used as normal housing is 3800</p>
+</div>
+<div id="b0c52cb8" class="cell markdown">
+<h3
+id="how-many-hotel-rooms-should-be-built-if-amsterdam-wants-to-accommodate-the-same-number-of-tourists">How
+many hotel rooms should be built if Amsterdam wants to accommodate the
+same number of tourists?</h3>
+</div>
+<div id="ba0a39a9" class="cell code" data-execution_count="11">
+<div class="sourceCode" id="cb10"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Constants</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>total_capacity_airbnb <span class="op">=</span> <span class="dv">8386</span>  </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>average_length_of_stay_airbnb <span class="op">=</span> <span class="dv">7</span>  </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>average_occupancy_rate_hotels <span class="op">=</span> <span class="fl">0.75</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>total_number_of_tourists_in_hotels <span class="op">=</span> total_capacity_airbnb</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>average_capacity_per_hotel_room <span class="op">=</span> <span class="dv">2</span>  <span class="co"># Assuming an average of 2 guests per hotel room</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Calculate the number of hotel rooms needed</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>number_of_hotel_rooms_needed <span class="op">=</span> (total_number_of_tourists_in_hotels) <span class="op">/</span> (average_occupancy_rate_hotels <span class="op">*</span> average_length_of_stay_airbnb <span class="op">*</span> average_capacity_per_hotel_room)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;To accommodate the same number of tourists as in Airbnb listings, Amsterdam should build approximately </span><span class="sc">{</span>number_of_hotel_rooms_needed<span class="sc">:.0f}</span><span class="ss"> hotel rooms.&quot;</span>)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code>To accommodate the same number of tourists as in Airbnb listings, Amsterdam should build approximately 799 hotel rooms.
+</code></pre>
+</div>
+</div>
+<div id="5050ef07" class="cell markdown">
+<h3 id="how-many-different-licenses-are-issued">How many different
+licenses are issued?</h3>
+</div>
+<div id="ee0ec05d" class="cell code" data-execution_count="10">
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode python"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">#(6) How many different licenses are issued?</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>listings <span class="op">=</span> pd.read_csv(<span class="st">&quot;listings.csv&quot;</span>)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(listings)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>licenses <span class="op">=</span> df[<span class="st">&quot;license&quot;</span>].nunique()</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">&quot;&quot;</span>, licenses)</span></code></pre></div>
+<div class="output stream stdout">
+<pre><code> 7288
+</code></pre>
+</div>
+</div>
+<div id="904e97f4" class="cell markdown">
+<p>The number of different licenses issued is 7288</p>
+</div>
+<div id="bc3f8d58" class="cell markdown">
+<p>Amsterdam. (2023, October 15). Tourist tax (toeristenbelasting).
+English Site. <a
+href="https://www.amsterdam.nl/en/municipal-taxes/tourist-tax-(toeristenbelasting)/"
+class="uri">https://www.amsterdam.nl/en/municipal-taxes/tourist-tax-(toeristenbelasting)/</a></p>
+<p>Data en informatie. (n.d.). <a
+href="https://data.amsterdam.nl/datasets/rl6-35tFAw2Ljw/basisbestand-gebieden-amsterdam-bbga/"
+class="uri">https://data.amsterdam.nl/datasets/rl6-35tFAw2Ljw/basisbestand-gebieden-amsterdam-bbga/</a></p>
+<p>Get the Data. (n.d.). <a href="http://insideairbnb.com/get-the-data/"
+class="uri">http://insideairbnb.com/get-the-data/</a></p>
+<p>Statista. (2023, July 6). Average cost of overnight accommodation in
+Amsterdam 2019-2023, by month. <a
+href="https://www.statista.com/statistics/614061/overnight-accommodation-costs-amsterdam-city/"
+class="uri">https://www.statista.com/statistics/614061/overnight-accommodation-costs-amsterdam-city/</a></p>
+</div>
+<div id="93f04c25" class="cell markdown">
 
+</div>
+<div id="70321ca1-e01a-4cb7-ab16-5acec1494dc7" class="cell markdown">
+
+<div id="b3d33828-7d4c-42ee-9c6d-18680fbe6f7f" class="cell markdown">
 <div class="footer">
   <h2>Footer</h2>
 </div>
