@@ -131,25 +131,9 @@ body {
     <h5>Question one</h5>
     <div class="fakeimg" style="height:200px;">
 
-import pandas as pd
-import matplotlib.pyplot as plt
 
-# Load your Airbnb dataset (replace 'your_dataset.csv' with your actual dataset)
-df = pd.read_csv('listingss.csv')
 
-# Group by neighborhood and count the number of listings in each neighborhood
-neighborhood_counts = df['neighbourhood'].value_counts()
-
-# Create a bar plot
-plt.figure(figsize=(12, 6))
-neighborhood_counts.plot(kind='bar')
-plt.title('Number of Airbnb Listings per Neighborhood in Amsterdam')
-plt.xlabel('neighbourhood')
-plt.ylabel('Number of Listings')
-plt.xticks(rotation=90)  # Rotate x-axis labels for better readability
-plt.tight_layout()
-plt.show()
-
+      
       
     </div>
     <p>Some text..</p>
@@ -158,7 +142,297 @@ plt.show()
     <h2>TITLE HEADING</h2>
     <h5>Title description, Sep 2, 2017</h5>
     <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
+    <p>
+What will Amsterdam receive from tourist tax if the event lasts a week and you will have 30.000 visitors?
+
+When looking at the benefits for Amsterdam, the tourist tax is a significant benefit of organising a big event like this. Let’s say the 7-day event will bring 30.000 visitors to Amsterdam, all staying in the city. The event will be hosted in May 2024, so looking at the average cost of overnight accommodation in Amsterdam in the same period this year, shows a nightly price of €294,00 (Statista, 2023). The city of Amsterdam regulates a 3€ + 7% tourist tax on hotel stays (Amsterdam, 2023). This brings the total amount of tourist tax income to €49,431,000.
+
+An important note to make is that the tax on holiday rentals, bed & breakfasts and short-stay accommodations is 10% of the turnover, excluding VAT and tourist tax. The total amount of tourist tax income will be significantly higher when taking these additional elements into consideration. In 2023, 8386 accommodations were listed on Airbnb. What share of event visitors will choose to stay in an Airbnb over another form of accommodation is unknown.
+
+One additional comment to make it that the €49,431,00 only includes tourist tax from overnight accommodation in Amsterdam and excludes all the tourist tax on expenses the visitors make while attending the event, think about food, drinks, activities etc.
+
+Plot the amount of Airbnb locations per neighborhood.
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Loading my Airbnb dataset
+df = pd.read_csv('listingss.csv')
+
+# Grouping by neighborhood and counting the number of listings in each neighborhood
+neighborhood_counts = df['neighbourhood'].value_counts()
+
+# Creating a bar plot
+plt.figure(figsize=(12, 6))
+neighborhood_counts.plot(kind='bar')
+plt.title('Number of Airbnb Listings per Neighborhood in Amsterdam')
+plt.xlabel('neighbourhood')
+plt.ylabel('Number of Listings')
+plt.xticks(rotation=90)  
+plt.tight_layout()
+plt.show()
+
+
+Which street in Amsterdam has the most Airbnb apartments?
+
+Step one: create a new database where the coordinates from the database can be converted to street names:
+
+Note: The table airbnb_listings only needs to be created once, hence the error as the outcome in the the first part of the code.
+
+import sqlite3
+
+
+new_db_path = 'new_database.db'
+
+# Create a new SQLite database file
+new_conn = sqlite3.connect(new_db_path)
+new_cursor = new_conn.cursor()
+
+# Create a table to store Airbnb listings
+new_cursor.execute('''
+    CREATE TABLE airbnb_listings (
+        id INTEGER PRIMARY KEY,
+        latitude REAL,
+        longitude REAL
+    )
+''')
+
+# Insert sample data into the table 
+new_cursor.execute("INSERT INTO airbnb_listings (latitude, longitude) VALUES (52.3766, 4.9001)")
+new_cursor.execute("INSERT INTO airbnb_listings (latitude, longitude) VALUES (52.3792, 4.9003)")
+
+# Commit changes and close the new database connection
+new_conn.commit()
+new_conn.close()
+
+print("New database created and data imported.")
+---------------------------------------------------------------------------
+OperationalError                          Traceback (most recent call last)
+Cell In[3], line 11
+      8 new_cursor = new_conn.cursor()
+     10 # Create a table to store Airbnb listings
+---> 11 new_cursor.execute('''
+     12     CREATE TABLE airbnb_listings (
+     13         id INTEGER PRIMARY KEY,
+     14         latitude REAL,
+     15         longitude REAL
+     16     )
+     17 ''')
+     19 # Insert sample data into the table (replace with your own data)
+     20 new_cursor.execute("INSERT INTO airbnb_listings (latitude, longitude) VALUES (52.3766, 4.9001)")
+
+OperationalError: table airbnb_listings already exists
+Step two: convert the coordinates from the database to street names using the geocoder method.
+
+import sqlite3
+from geopy.geocoders import Nominatim
+
+# Initialize the Nominatim geocoder
+geolocator = Nominatim(user_agent="reverse_geocode")
+
+# Connect to the existing database
+db_path = 'new_database.db'  # Update with the correct path
+conn = sqlite3.connect(db_path)
+cursor = conn.cursor()
+
+# Check if the 'street_name' column exists; if not, create it
+cursor.execute('''
+    PRAGMA table_info(airbnb_listings)
+''')
+columns = [column[1] for column in cursor.fetchall()]
+if 'street_name' not in columns:
+    cursor.execute('''
+        ALTER TABLE airbnb_listings
+        ADD COLUMN street_name TEXT
+    ''')
+
+# Fetch latitude and longitude coordinates from the database
+cursor.execute("SELECT id, latitude, longitude FROM airbnb_listings")
+rows = cursor.fetchall()
+
+# Update the street names in the database
+for row in rows:
+    listing_id, latitude, longitude = row[0], row[1], row[2]
+    location = f"{latitude}, {longitude}"
+
+    try:
+        location_info = geolocator.reverse(location, language="en", timeout=10)
+        if location_info:
+            address = location_info.address
+            street_name = address.split(', ')[1]
+
+            # Update the 'street_name' column for the listing
+            cursor.execute("UPDATE airbnb_listings SET street_name = ? WHERE id = ?", (street_name, listing_id))
+    except Exception as e:
+        print(f"Error: {str(e)}")
+
+# Commit changes and close the database connection
+conn.commit()
+conn.close()
+
+print("Street names updated in the database.")
+Error: HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Max retries exceeded with url: /reverse?lat=52.3766&lon=4.9001&format=json&accept-language=en&addressdetails=1 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')))
+Error: HTTPSConnectionPool(host='nominatim.openstreetmap.org', port=443): Max retries exceeded with url: /reverse?lat=52.3792&lon=4.9003&format=json&accept-language=en&addressdetails=1 (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1006)')))
+Street names updated in the database.
+Step 3: now the new database is created. From here you can get the information on the street with the most Airbnb listings by using the following code:
+
+import sqlite3
+
+# Connect to the database
+db_path = 'new_database.db'  
+conn = sqlite3.connect(db_path)
+cursor = conn.cursor()
+
+# SQL query to count listings by street name
+query = '''
+    SELECT street_name, COUNT(*) AS listing_count
+    FROM airbnb_listings
+    WHERE street_name IS NOT NULL
+    GROUP BY street_name
+    ORDER BY listing_count DESC
+'''
+
+# Execute the query
+cursor.execute(query)
+
+# Fetch the result (first row represents the street with the most listings)
+result = cursor.fetchone()
+
+if result:
+    most_listed_street = result[0]
+    max_listings = result[1]
+
+    print(f"The street with the most Airbnb listings is '{most_listed_street}' with {max_listings} listing.")
+else:
+    print("No street names found in the database.")
+
+# Close the database connection
+conn.close()
+The street with the most Airbnb listings is 'Stationsplein' with 1 listing.
+This leads to the following result: The street with the most Airbnb listings is 'Stationsplein'. This result is not very trustworthy since only a paid service from google API was able to handle this big size of datasets.
+
+Try to cross reference the data from the AirBnB dataset with the BBGA. Can you figure out if all apartments of AirBnB are designated as housing? Which number of apartments are not rented out all the time but are also used as normal housing?
+
+import pandas as pd
+
+# Load Airbnb dataset
+airbnb_df = pd.read_csv('listingss.csv')
+
+# Load BBGA dataset
+bbga_df = pd.read_csv('listingss.csv')
+
+radius_km = 1  
+
+from math import radians, sin, cos, sqrt, atan2
+
+def haversine(lat1, lon1, lat2, lon2):
+    # Radius of the Earth in kilometers
+    R = 6371.0
+
+    # Convert latitude and longitude from degrees to radians
+    lat1 = radians(lat1)
+    lon1 = radians(lon1)
+    lat2 = radians(lat2)
+    lon2 = radians(lon2)
+
+    # Differences in coordinates
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+
+    # Haversine formula
+    a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+
+    # Calculate the distance
+    distance = R * c
+
+    return distance
+
+
+
+# Step 1: Preprocess Data
+
+# Step 2: Identify Airbnb Listings in Housing Areas
+# You need to match Airbnb listings with housing areas from BBGA.
+# Define a radius or boundaries for matching.
+
+# Assuming you have latitude and longitude columns in both datasets
+def match_listings_to_housing_areas(airbnb_df, bbga_df, radius_km):
+    matched_listings = []
+
+    for _, airbnb_row in airbnb_df.iterrows():
+        airbnb_lat = airbnb_row['latitude']
+        airbnb_lon = airbnb_row['longitude']
+
+        for _, bbga_row in bbga_df.iterrows():
+            bbga_lat = bbga_row['latitude']
+            bbga_lon = bbga_row['longitude']
+
+            # Calculate distance between Airbnb listing and BBGA housing area
+            distance_km = haversine(airbnb_lat, airbnb_lon, bbga_lat, bbga_lon)
+
+            if distance_km <= radius_km:
+                matched_listings.append(airbnb_row)
+                break
+
+    return pd.DataFrame(matched_listings)
+
+# Step 3: Distinguish Long-Term Rentals
+# You need to identify listings available for extended periods.
+
+def find_long_term_rentals(airbnb_df, threshold_days):
+    long_term_rentals = airbnb_df[airbnb_df['availability_365'] > threshold_days]
+    return long_term_rentals
+
+# Step 4: Filter Listings Used as Normal Housing
+matched_listings = match_listings_to_housing_areas(airbnb_df, bbga_df, radius_km)
+long_term_rentals = find_long_term_rentals(matched_listings, 30)
+
+# Step 5: Count Apartments
+count_of_normal_housing = len(long_term_rentals)
+
+
+# output
+print(f"Number of apartments used as normal housing: {count_of_normal_housing}")
+Number of apartments used as normal housing: 3800
+The number of apartments used as normal housing is 3800
+
+How many hotel rooms should be built if Amsterdam wants to accommodate the same number of tourists?
+
+# Constants
+total_capacity_airbnb = 8386  
+average_length_of_stay_airbnb = 7  
+average_occupancy_rate_hotels = 0.75
+total_number_of_tourists_in_hotels = total_capacity_airbnb
+average_capacity_per_hotel_room = 2  # Assuming an average of 2 guests per hotel room
+
+# Calculate the number of hotel rooms needed
+number_of_hotel_rooms_needed = (total_number_of_tourists_in_hotels) / (average_occupancy_rate_hotels * average_length_of_stay_airbnb * average_capacity_per_hotel_room)
+
+print(f"To accommodate the same number of tourists as in Airbnb listings, Amsterdam should build approximately {number_of_hotel_rooms_needed:.0f} hotel rooms.")
+To accommodate the same number of tourists as in Airbnb listings, Amsterdam should build approximately 799 hotel rooms.
+How many different licenses are issued?
+
+#(6) How many different licenses are issued?
+listings = pd.read_csv("listings.csv")
+df = pd.DataFrame(listings)
+licenses = df["license"].nunique()
+print("", licenses)
+ 7288
+The number of different licenses issued is 7288
+
+Amsterdam. (2023, October 15). Tourist tax (toeristenbelasting). English Site. https://www.amsterdam.nl/en/municipal-taxes/tourist-tax-(toeristenbelasting)/
+
+Data en informatie. (n.d.). https://data.amsterdam.nl/datasets/rl6-35tFAw2Ljw/basisbestand-gebieden-amsterdam-bbga/
+
+Get the Data. (n.d.). http://insideairbnb.com/get-the-data/
+
+Statista. (2023, July 6). Average cost of overnight accommodation in Amsterdam 2019-2023, by month. https://www.statista.com/statistics/614061/overnight-accommodation-costs-amsterdam-city/
+
+
+
+      
+    </p>
     <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
   </div>
 </div>
