@@ -129,7 +129,29 @@ body {
   <div class="main">
     <h2>Housing</h2>
     <h5>Question one</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
+    <div class="fakeimg" style="height:200px;">
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load your Airbnb dataset (replace 'your_dataset.csv' with your actual dataset)
+df = pd.read_csv('listingss.csv')
+
+# Group by neighborhood and count the number of listings in each neighborhood
+neighborhood_counts = df['neighbourhood'].value_counts()
+
+# Create a bar plot
+plt.figure(figsize=(12, 6))
+neighborhood_counts.plot(kind='bar')
+plt.title('Number of Airbnb Listings per Neighborhood in Amsterdam')
+plt.xlabel('neighbourhood')
+plt.ylabel('Number of Listings')
+plt.xticks(rotation=90)  # Rotate x-axis labels for better readability
+plt.tight_layout()
+plt.show()
+
+      
+    </div>
     <p>Some text..</p>
     <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
     <br>
