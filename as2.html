@@ -108,6 +108,143 @@ body {
     width: 100%;
   }
 }
+  @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </style>
 </head>
 <body>
@@ -127,18 +264,348 @@ body {
 
 
   <div class="main">
-    <h2>Intro</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br>
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-  </div>
+   <p><em>Paris is hosting the Paralympics in 2024. One of the events at
+the Paralympics is an open water<br />
+swimming event in the Seine (apparently the water is clean or so the
+French say). Since the City<br />
+of Amsterdam thinks it is better than Paris, they want to host an event
+before the Paralympics,<br />
+snubbing the Parisians. The idea is to host a 5km. open water swimming
+event through the<br />
+canals of Amsterdam. You are asked by the municipality of Amsterdam to
+advise on the<br />
+feasibility of the event from the perspective of the safety of the
+partaking athletes from an<br />
+environmental perspective. The event is going to be hosted in May.<br />
+</em></p>
+<p><em>The Municipality is worried that the canal- and support boats
+might pollute the air with their<br />
+diesel engines. Since the Municipality wants to create ideal conditions
+for the swimmers so<br />
+they can set records (always nice for PR), it is your task to figure out
+if their concern is<br />
+warranted and what should or could be done to improve conditions. Next
+to that, Amsterdam<br />
+wants to advertise this event as a Neutral Energy Event©™®
+(NEE).</em></p>
+<p><strong>How many of the canal boats currently in use are diesel/
+fossil fuel driven and how many boats are electrical
+driven?</strong></p>
+<p>To support the transition to emission-free transport in 2025, all
+emission-free boats in Amsterdam, such as electric boats, get a discount
+on inland port dues (Municipality of Amsterdam, B. 2023).</p>
+<p>As monitored by the municipality of Amsterdam, in 2022 7350 vignettes
+have been provided for recreational moorings in Amsterdam. Roughly 34
+percent (2496 vignettes) of these vignettes were for boats with an
+electrical motor, or hybrid boats, which were only allowed to use their
+electrical motor in Amsterdam (Municipality of Amsterdam, 2022).
+Therefore, more than half of the vignettes were used for boats with fuel
+engines.</p>
+<p>In the commercial sector, many canal boat companies have started
+converting their boats to electrical driven boats. In 2020, already 75
+percent of the 550 commercial vessels (so roughly 413 canal boats)
+became electrical driven (Jonkers, 2020). As buying a new electric canal
+boat is more expensive than transforming a fuel driven boat to an
+electric one, many canal boat companies chose for the second option
+(Sterling, 2020).</p>
+<p>registered_sustainable = 2496</p>
+<p>total_registered = 7350</p>
+<p>results = (registered_sustainable / total_registered) * 100</p>
+<p>print (results)</p>
+<p>33.95918367346939</p>
+<p>Commercial = 550</p>
+<p>Electric_commercial = 0.75 * New</p>
+<p>print (Electric_commercial)</p>
+<p>412.5</p>
+<p><strong>Are there peak times for the canal boats?</strong></p>
+<p>As there is no data available of the peak times for the canal boats,
+we talked to three employees of the bigger shipping companies of
+Amsterdam, the Blue Boat Company, Lovers B.V. and shipping company
+Plas.</p>
+<p>When talking to an employee of the Blue Boat Company, she explained
+how it differs per boarding location how busy it is during the day. As
+the location close to the Hard Rock Cafe close to the Leidseplein is
+oftentimes fully reserved almost the whole day (from 10:00 – 18:00 and
+from 18:30 – 23:30). While the location close to the Heinekenexperience,
+is less busy, due to less tourists walking by (Employee A., personal
+communication, October 13, 2023). Shipping company Lovers B.V. explained
+how they noticed how the evening cruises were busier than during the
+day, since tourists like to see the lights of Amsterdam during the
+cruise (Employee B., personal communication, October 13, 2023). Shipping
+Company Plas usually experienced two waves: during the daytime from
+12:00 to 16:00 and from 19:00-21:00, so around lunch- and dinnertime
+(Employee C., personal communication, October 13, 2023).</p>
+<p>Furthermore, the prices of the cruises in the evening are usually
+more expensive than the cruises during the day (BlueBoatCompany, 2023;
+Rederij Plas, 2023). This could also be an indication for the popularity
+of the evening cruises, and thus the peak times of the canal boats.</p>
+<p><strong>Compare the energy use of the canal boats to some other
+activities in the city.</strong></p>
+<p><strong>Use canal boats more or less energy in relation to their
+carbon footprint compared to these other activities?</strong></p>
+<p><em>The electrical canalboat the Barlaeus of the Blue Boat Company of
+Amsterdam</em></p>
+<p><img src="vertopal_5f913349595545408ff27c89fe661243/media/image2.png"
+style="width:4.22376in;height:2.80645in" /></p>
+<p><img src="vertopal_5f913349595545408ff27c89fe661243/media/image3.png"
+style="width:4.23548in;height:2.81479in" /></p>
+<p>Source: Schuitemaker (2008) De Binnenvaart</p>
+<p>As TNO described in their report in 2016 about <em>Electrical cruises
+in Amsterdam</em>, an electrical boat uses roughly 17kWh to sail and for
+auxiliary systems. In colder weather, the boat also uses 15kW for
+heating, but this can be decreased to 5 kW, using a heat pump (Van
+Mensch et al., 2016).</p>
+<p>In practice, a typical big canal boat, such as the Barleaus of the
+Blue Boat Company uses roughly 15,5 kWh and due to loss of return, ends
+up being 19,4 kWh. At the same time, the canal boat has other energy
+needs, besides driving force, such as lightning and toilet facilities,
+which needs an extra 2 kWh. Therefore, in winter times, a canal boat
+uses approximately 21,4 to 22 kWh to sail for an hour. As can be seen by
+the graph below, the energy usage sometimes peaks, when making sharp
+turns and with maneuvering though the canals.</p>
+<p>Therefore, the energy usage is dependent on the route, since the
+speed and actions, such as braking can increase the amount of kW is
+needed (Van Mensch et al., 2016).</p>
+<p><em>Time distribution per power class of the Barlaeus of the Blue
+Boat Company of Amsterdam</em></p>
+<p><img src="vertopal_5f913349595545408ff27c89fe661243/media/image4.png"
+style="width:5.9173in;height:2.92473in" /></p>
+<p>Source: Van Mensch et al. (2016)</p>
+<p>According to Van Mensch et al. (2016), the Li-ion-batteries and
+lead-acid batteries are the most suitable for canal boats. At the same
+time, the lithium, which is needed for the Li-ion-batteries, is
+available from multiple countries. Nonetheless, these batteries cannot
+be fully recycled, while this is possible with the lead-acid
+batteries.</p>
+<p>If the electrical canal boat would use grey electricity, or
+electricity generated in polluting coal, gas or nuclear power stations,
+it would emit 13,89 kilos of CO2 per hour during winter (Wisenederland,
+2023). Thus, when the Barlaeus sails for an hour during winter, it uses
+approximately 0,27 kWh per person (assuming that there are 80 persons in
+the boat) (Van Mensch et al., 2016) and 0,17 kilos of CO2
+(Wisenederland, 2023).</p>
+<p>When comparing this to the energy usage of an electrical scooter, it
+becomes clear how the canal boat uses less energy per person. As an
+electrical scooter uses 2 kWh per 100 kilometers and can drive up to 45
+kilometers per hour (Milieucentraal, 2023). Therefore, it uses 0,9 kWh
+and 0,58 kilos of CO2 per hour per person (assuming there is only one
+person using the scooter).</p>
+<p>Energy = 19.4 + 2</p>
+<p>print (Energy)</p>
+<p>21.4</p>
+<p>KWHPP = 21.4 / 80</p>
+<p>print (KWHPP)</p>
+<p>kilo = KWHPP * 0.649</p>
+<p>print (kilo)</p>
+<p>0.26749999999999996</p>
+<p>0.17360749999999997</p>
+<p>emissionboat = 21.4 * 0.649</p>
+<p>print (emissionboat)</p>
+<p>13.8886</p>
+<p>scooter = 2 / 100</p>
+<p>print (scooter)</p>
+<p>scooterkwh = scooter * 45</p>
+<p>print (scooterkwh)</p>
+<p>scooterco = scooterkwh * 0.649</p>
+<p>print (scooterco)</p>
+<p>0.02</p>
+<p>0.9</p>
+<p>0.5841000000000001</p>
+<p><strong>Would you consider it economically feasible?</strong></p>
+<p>As Mensch et al. (2016) explain, the electrical boats itself are
+quite a big investment, in comparison to the regular boats. Therefore,
+it will take some time before the investment will be worth it. As can be
+seen by the graph below, as the lead-acid batteries are less expensive
+than the Li-ion-batteries, the lead-acid batteries have a shorter
+break-even period of twelve years. Nonetheless, these types of batteries
+were already expensive and the prices of them have increased even more,
+due to their ability to store energy, which is necessary for many
+electric transport modes (Koenis, 2023; Van Zon, 2023). Therefore, even
+though electricity is cheaper than fuel, the electric canal boats will
+stay a large investment.</p>
+<p>As all transport must be emission-free in the city center in 2025
+(Municipality of Amsterdam, B. 2023), canal boat companies will not be
+able to use fuel engine boats anymore. Therefore, canal boat companies
+should start electrifying soon if they do not want to close their
+business.</p>
+<p><em>Business case with investment year 2014, relative to new diesel
+engine</em></p>
+<p><img src="vertopal_5f913349595545408ff27c89fe661243/media/image5.png"
+style="width:6.37207in;height:3.93548in" />Source: Van Mensch et al.
+(2016)</p>
+<p><strong>How many support boats and vehicles are needed for the
+Paralympics event only?</strong></p>
+<p>As it is still unclear how many participants will join the
+Paralympics event in the canals of Amsterdam, the number of participants
+for the Amsterdam City Swim in 2023 will be used.</p>
+<p>When looking at the number of participants for the two kilometers
+Amsterdam City Swim in 2023, it becomes clear how the relatively narrow
+canals of Amsterdam make it difficult for all the participants to swim
+at the same time. Therefore, the program of the Amsterdam City Swim is
+divided in about twenty waves, or timeslots. Hence, as 3000 participants
+have registered, during each wave there will be around 150 competitors
+swimming (Amsterdam City Swim, 2023).</p>
+<p>In another open water swimming contest in the Netherlands in 2023,
+the Lektocht, there were around 400 swimmers and 24 lifeboats. The
+distance of the Lektocht was six kilometers (Culemborgse courant, 2023).
+Thus, about nine lifeboats should be enough for the five kilometers
+Paralympics event.</p>
+<p>However, apart from vehicles such as lifeboats, the municipality of
+Amsterdam should also consider the extra traffic flows from the
+Paralympics event. Since, for instance camera crews, staff members,
+medical care et cetera, also must be able to reach the event and the
+participants.</p>
+<p>swimmers = 3000 / 20</p>
+<p>print (swimmers)</p>
+<p>150.0</p>
+<p>Boats = 400 / 150</p>
+<p>print (Boats)</p>
+<p>Boats_Para = 24 / (Boats)</p>
+<p>print (Boats_Para)</p>
+<p>2.6666666666666665</p>
+<p>9.0</p>
+<p><strong>If only clean energy can be used, how many solar panels or
+wind turbines are needed?</strong></p>
+<p>As Van Mensch et al. (2016) described, if all canal tours and
+passenger transport over water, would be electrified, the energy need
+would be roughly 9105 MWh (9105000 KWh) per year, which is the same
+amount as 2600 households (Van Mensch er al., 2016).</p>
+<p>One windmill with a power of 3 MW can produce 6,5 milion KWh per
+year, which is enough for 2100 households for one year (Gaslicht, 2023).
+Therefore, if the canal boats would need the same amount of energy of
+roughly 2600 households, two windmills should be more than enough
+(Gaslicht, 2023).</p>
+<p>When calculating how many solar panels would be needed, it becomes
+clear how there is way more space needed for solar panels than for
+windmills. As one solar panel provides 300 KWh electricity per year
+(Consumentenbond, 2022) and requires a surface of 1,5 square meters
+(Solvari, 2023). Therefore, for all electrified canal tours and
+passenger transport over water, 30350 solar panels would be needed and
+45525 square meters, which is about the same as seven soccer fields
+(Schwartz, 2020).</p>
+<p>Panels = 9105000 / 300</p>
+<p>print (Panels)</p>
+<p>Squarem = (Panels * 1.5)</p>
+<p>print (Squarem)<br />
+30350.0</p>
+<p>45525.0</p>
+<p><strong>Is it possible to accommodate these facilities within the
+city?</strong></p>
+<p>The municipality of Amsterdam is already searching for locations
+around Amsterdam to place 17 new windmills before 2030 (Municipality of
+Amsterdam, D. 2023). However, when looking at their preferred locations,
+they are all placed on the outskirts of Amsterdam, such as the harbor
+(Municipality of Amsterdam, C. 2023). Therefore, if they would have to
+place 19 windmills, instead of 17, the municipality would probably not
+prefer them within the city center.</p>
+<p>At the moment, there are one million solar panels in Amsterdam
+(Municipality of Amsterdam, A. 2023). Therefore, for all electrified
+canal tours and passenger transport over water, the number of solar
+panels should increase with around a third of the existing amount. As
+the electrification of all canal tours and passenger transport over
+water would require seven soccer fields of solar panels, this could be
+possible in Amsterdam, since for instance the Port of Amsterdam has
+already reached its goal of placing 250.000 square meters of solar
+panels in the port area in 2024 (Port of Amsterdam, 2023). They are now
+striving for 350.000 square meters in 2024. Therefore, it could be
+assumed that it is possible to place the needed solar panels in for
+instance, the port area of Amsterdam.</p>
+<p><strong>Would there be any effect on the water quality if there are
+less/ no canal boats using fossil fuels?</strong></p>
+<p>Water quality can be affected by many different aspects. As the Water
+Authority Amstel, Gooi and Vecht (2023) explains, for example, how the
+ecological water quality is influenced by boat traffic. Due to the
+engines of the boats, the bottom of the water comes up, resulting in
+more mud and less light in the water. The decrease in light influences
+biodiversity since plants and animals need light to grow.</p>
+<p>Nonetheless, due to the connections to the sewer systems, the sewage
+water from the houseboats is not released in the canals anymore, which
+benefitted the water quality. Now the quality of the water in Amsterdam
+usually decreases only on the days were there is a lot of rain
+(Waterschap Amstel, Gooi &amp; Vecht, 2023).</p>
+<p>Thus, the water quality will still be influenced by electric boats,
+since their engines decrease the amount of light in the water and thus
+biodiversity.</p>
+<p><strong>References</strong></p>
+<p>Amsterdam City Swim (2023) <em>Programme</em> <a
+href="https://www.amsterdamcityswim.nl/programma">https://www.amsterdamcityswim.nl/programma</a>
+(consulted 13 October 2023).</p>
+<p>BlueBoatCompany (2023) <em>Rondvaarten</em> <a
+href="https://www.blueboat.nl/rondvaart-amsterdam/">https://www.blueboat.nl/rondvaart-amsterdam/</a>
+(consulted 13 October 2023).</p>
+<p>Culemborgse courant (2023) <em>25e editie van de Lektocht: zwemmen
+van Beusichem naar Culemborg</em> <a
+href="https://www.culemborgsecourant.nl/sport/sport/352723/25e-editie-van-de-lektocht-zwemmen-van-beusichem-naar-culemborg">https://www.culemborgsecourant.nl/sport/sport/352723/25e-editie-van-de-lektocht-zwemmen-van-beusichem-naar-culemborg</a>
+(consulted 13 October 2023).</p>
+<p>Gaslicht (2023) <em>De opbrengst van windmolens: hoeveel megawatt
+levert een windmolen?</em> <a
+href="https://www.gaslicht.com/energie-informatie/windmolen#:~:text=Vermogen%20van%20een%20windmolen,-Hoe%20zit%20dat&amp;text=Nieuwe%20windmolens%20hebben%20een%20vermogen,n%203000%20kWh%20per%20jaar">https://www.gaslicht.com/energie-informatie/windmolen#:~:text=Vermogen%20van%20een%20windmolen,-Hoe%20zit%20dat&amp;text=Nieuwe%20windmolens%20hebben%20een%20vermogen,n%203000%20kWh%20per%20jaar</a>
+(consulted 17 October 2023).</p>
+<p>Jonkers, J. (2020) <em>75% van toeristische boten in Amsterdam is
+elektrisch</em> <a
+href="https://techpulse.be/nieuws/274108/75-van-toeristische-boten-in-amsterdam-is-elektrisch/">https://techpulse.be/nieuws/274108/75-van-toeristische-boten-in-amsterdam-is-elektrisch/</a>
+(consulted 10 October 2023).</p>
+<p>Koenis, C. (2023) <em>Het 'witte goud': waarom de hele wereld op
+jacht is naar lithium</em> <a
+href="https://www.rtlnieuws.nl/economie/artikel/5357651/lithium-batterij-accu-elektrische-auto-handel-grondstoffen">https://www.rtlnieuws.nl/economie/artikel/5357651/lithium-batterij-accu-elektrische-auto-handel-grondstoffen</a>
+(consulted 17 October 2023).</p>
+<p>Milieucentraal (2023) <em>Elektrische scooter</em> <a
+href="https://www.milieucentraal.nl/duurzaam-vervoer/elektrische-scooter/">https://www.milieucentraal.nl/duurzaam-vervoer/elektrische-scooter/</a>
+(consulted 10 October 2023).</p>
+<p>Municipality of Amsterdam (2023) A. <em>Een stralende mijlpaal: 1
+miljoen zonnepanelen in Amsterdam</em> <a
+href="https://www.amsterdam.nl/nieuws/nieuwsoverzicht/1-miljoen-zonnepanelen/">https://www.amsterdam.nl/nieuws/nieuwsoverzicht/1-miljoen-zonnepanelen/</a>
+(consulted 16 October 2023).</p>
+<p>Municipality of Amsterdam (2023) B. <em>Elektrisch varen</em> <a
+href="https://www.amsterdam.nl/verkeer-vervoer/varen-amsterdam/elektrisch-varen/">https://www.amsterdam.nl/verkeer-vervoer/varen-amsterdam/elektrisch-varen/</a>
+(consulted 10 October 2023).</p>
+<p>Municipality of Amsterdam (2022) <em>Grachtenmonitor 2022</em> <a
+href="https://openresearch.amsterdam/nl/page/92981/grachtenmonitor-2022">https://openresearch.amsterdam/nl/page/92981/grachtenmonitor-2022</a>
+(consulted 10 October 2023).</p>
+<p>Municipality of Amsterdam (2023) C. <em>Kaart windzoekgebieden</em>
+<a
+href="https://www.amsterdam.nl/wonen-leefomgeving/duurzaam-amsterdam/windmolens-amsterdam/kaart-zoekgebieden/">https://www.amsterdam.nl/wonen-leefomgeving/duurzaam-amsterdam/windmolens-amsterdam/kaart-zoekgebieden/</a>
+(consulted 16 October 2023).</p>
+<p>Municipality of Amsterdam (2023) D. <em>Windmolens in Amsterdam</em>
+<a
+href="https://www.amsterdam.nl/wonen-leefomgeving/duurzaam-amsterdam/windmolens-amsterdam/">https://www.amsterdam.nl/wonen-leefomgeving/duurzaam-amsterdam/windmolens-amsterdam/</a>
+(consulted 16 October 2023).</p>
+<p>Port of Amsterdam (2023) <em>Ruim 260.000 m2 zonnepanelen in de
+Amsterdamse haven</em> <a
+href="https://www.portofamsterdam.com/nl/nieuws/ruim-260000-m2-zonnepanelen-de-amsterdamse-haven">https://www.portofamsterdam.com/nl/nieuws/ruim-260000-m2-zonnepanelen-de-amsterdamse-haven</a>
+(consulted 16 October 2023).</p>
+<p>Rederij Plas (2023) <em>Boottochten in Amsterdam</em> <a
+href="https://www.rederijplas.nl/nl">https://www.rederijplas.nl/nl</a>
+(consulted 13 October 2023).</p>
+<p>Schwartz, K. (2020) <em>Nog niet eerder openden er zoveel grote
+distributiecentra in ons land</em> <a
+href="https://www.trouw.nl/economie/nog-niet-eerder-openden-er-zoveel-grote-distributiecentra-in-ons-land~bb609db6/#:~:text=Grote%20distributiecentra%3F,dertig%20in%20aanbouw%20of%20aangekondigd">https://www.trouw.nl/economie/nog-niet-eerder-openden-er-zoveel-grote-distributiecentra-in-ons-land~bb609db6/#:~:text=Grote%20distributiecentra%3F,dertig%20in%20aanbouw%20of%20aangekondigd</a>
+(consulted 17 October 2023).</p>
+<p>Sterling, T. (2020) <em>Amsterdam's boats go electric ahead of 2025
+diesel ban</em> <a
+href="https://www.reuters.com/article/us-climate-change-netherlands/amsterdams-boats-go-electric-ahead-of-2025-diesel-ban-idUSKBN20Q1W7">https://www.reuters.com/article/us-climate-change-netherlands/amsterdams-boats-go-electric-ahead-of-2025-diesel-ban-idUSKBN20Q1W7</a>
+(consulted 10 October 2023).</p>
+<p>Solvari (2023) <em>Zonnepanelen berekenen</em> <a
+href="https://www.zonne-paneel.net/zonnepanelen-berekenen/#:~:text=Je%20berekent%20het%20aantal%20zonnepanelen,16%20x%20260%20%3D%204117">https://www.zonne-paneel.net/zonnepanelen-berekenen/#:~:text=Je%20berekent%20het%20aantal%20zonnepanelen,16%20x%20260%20%3D%204117</a>)
+(consulted 17 October 2023).</p>
+<p>Van Mensch, P., Verbeek, R., Bolech, M. (2016) <em>Elektrische
+rondvaart in Amsterdam: TNO-rapport 2016</em> (Report. No. R10481). TNO
+.</p>
+<p>Verschoor (2022) <em>Hoeveel zonnepanelen heb ik nodig?</em> <a
+href="https://www.consumentenbond.nl/zonnepanelen/hoeveel-zonnepanelen#:~:text=Zoals%20we%20hierboven%20beschrijven%2C%20leveren,je%2010%20gemiddelde%20zonnepanelen%20nodig">https://www.consumentenbond.nl/zonnepanelen/hoeveel-zonnepanelen#:~:text=Zoals%20we%20hierboven%20beschrijven%2C%20leveren,je%2010%20gemiddelde%20zonnepanelen%20nodig</a>
+(consulted 17 October 2023).</p>
+<p>Van Zon (2023) <em>Op zoek naar de batterij van de toekomst: ‘Ben
+ervan overtuigd dat het gaat lukken’</em> <a
+href="https://www.parool.nl/nederland/op-zoek-naar-de-batterij-van-de-toekomst-ben-ervan-overtuigd-dat-het-gaat-lukken~b905e831/">https://www.parool.nl/nederland/op-zoek-naar-de-batterij-van-de-toekomst-ben-ervan-overtuigd-dat-het-gaat-lukken~b905e831/</a>
+(consulted 17 October 2023).</p>
+<p>Waterschap Amstel Gooi &amp; Vecht (2023) <em>Werken aan schoon
+water</em> <a
+href="https://www.agv.nl/specials/waterkwaliteit/">https://www.agv.nl/specials/waterkwaliteit/</a>
+(consulted 16 October 2023).</p>
+<p>Wisenederland (2023) <em>Hoeveel CO2-uitstoot bespaar je als je
+overstapt op groene energie?</em> <a
+href="https://wisenederland.nl/artikel/hoeveel-co2-uitstoot-bespaar-je-als-je-overstapt-op-groene-energie/">https://wisenederland.nl/artikel/hoeveel-co2-uitstoot-bespaar-je-als-je-overstapt-op-groene-energie/</a>
+(consulted 16 October 2023).</p>
 </div>
 
 <div class="footer">
