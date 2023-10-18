@@ -108,12 +108,149 @@ body {
     width: 100%;
   }
 }
+  @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 1em;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
+      font-size: 85%;
+      margin: 0;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      background-color: #1a1a1a;
+      border: none;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>Assignment 1</h1>
+  <h1>Assignment 2</h1>
   <p>MADE - DATA1 - Julika, Pip & Robin (group 6).</p>
 </div>
 
@@ -125,21 +262,102 @@ body {
   <a href="index.html" class="right">home</a>
 </div>
 
-
   <div class="main">
-    <h2>Intro</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br>
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-  </div>
-</div>
+    <h2 id="water">Water</h2>
+<h2
+id="the-event-cant-have-an-impact-on-commercial-water-transport.">The
+event can’t have an impact on commercial water transport.</h2>
+<p><img src="vertopal_df4fccc54912484caa4c3c8009361112/media/image1.png"
+style="width:6.20694in;height:3.16667in" /></p>
+<p>As commercial water transport
+in Amsterdam mostly consists of canal tours for tourists, public
+transport, and cargo shipping (1,2,3), the routes for these types of
+transport take place in the wider waterways of Amsterdam. This map of
+the municipality of Amsterdam (2021) shows the public boarding and
+drop-off locations for transport and passenger shipping and the
+anchorage locations for small to large boats. As can be seen, these
+points are generally located in the city centre of Amsterdam.</p>
+<p>Figure 1: Source: Municipality of Amsterdam, 2021 (21 December)</p>
+<p>Here, we chose the location for the anti-French swimming competition
+at the west side of Amsterdam: near to the Erasmuspark, the
+Erasmusgracht, circled on the map above.</p>
+<p>Here, we tracked the route of 1km. where crowds in the park can cheer
+on the swimmers. The bridge will function as the starting point and also
+the finish line. All in all, a great mini swim to show the French who is
+boss.</p>
+<p><img src="vertopal_df4fccc54912484caa4c3c8009361112/media/image2.png"
+style="width:6.3in;height:5.67986in" /><img
+src="vertopal_df4fccc54912484caa4c3c8009361112/media/image3.jpeg"
+style="width:6.3in;height:5.0125in" /></p>
+<p><img src="vertopal_df4fccc54912484caa4c3c8009361112/media/image4.png"
+style="width:6.3in;height:3.38333in"
+alt="Aerial view of a city Description automatically generated" /></p>
+<p><img src="vertopal_df4fccc54912484caa4c3c8009361112/media/image5.png"
+style="width:6.3in;height:3.07014in"
+alt="A aerial view of a city Description automatically generated" /></p>
+<h2 id="what-is-the-pollution-level-of-the-canal">What is the pollution
+level of the canal? </h2>
+<p>The quality of the canal water surrounding the Erasmus Park in
+Amsterdam West has been monitored for several years and it can be
+categorized as ‘good’, which means it has no serious health risks (4)
+But it has not been selected as an official swimming spot, where <a
+href="https://www.zwemwater.nl/">https://www.zwemwater.nl/</a> doesn’t
+track its water quality (yet). It measures whether certain bacteria
+(intestinal enterococci (IE) and Escherichia coli (E. coli) are present
+in the water. Both species of bacteria are found in human and animal
+feces and are good indicators of bathing water quality (5). When levels
+are above 400 n/dl for IE and 1800 n/dl for E.coli, the water is forms a
+health risk.(6). Then, it gets one of five classes, see Figure
+FIXME.</p>
+<p>We used data from other water bodies with ‘good’ (2 stars) as their
+class. At <em>De Grote Speelweide, Amsterdamse bos(7) ,</em> the
+measurements taken in May 2023 were 15 n/dl for IE and 46 n/dl. As shown
+in the graph below, both are far under the yellow line that represents
+the health risk bar. This makes the Erasmusgracht an suitable swimming
+place for the Paralympics.</p>
+<p><img src="vertopal_df4fccc54912484caa4c3c8009361112/media/image6.png"
+style="width:6.23958in;height:4.58333in" /></p>
+<h2
+id="data-sets-that-are-of-use-for-giving-a-proper-advice-to-the-municipality.">Data
+sets that are of use for giving a proper advice to the
+municipality.</h2>
+<p>How an official swimming location must be arranged is not defined by
+law. The province assesses safety, with the environmental department
+conducting the necessary research (8). Below are possible and usable
+datasets for the municipality to use to determine if our chosen place is
+a proper swimming location.</p>
+<ul>
+<li><p>Data sets with data showing how strong the currents are in that
+specific water body</p></li>
+<li><p>Data sets with data that show the measurements of the water
+body</p></li>
+<li><p>Data sets with data that keeps track of the waste in the water
+body</p></li>
+</ul>
+<h2 id="resources">Resources</h2>
+<p>1.Rondvaarten | Amsterdam. (z.d.).
+https://amsterdam.org/nl/rondvaarten.php</p>
+<p>2.Gemeente Amsterdam Klaas-Bindert de Haan. (z.d.). Op- en
+afstapplaatsen &amp; ligplaatsen passagiersvaartuigen. <a
+href="https://maps.amsterdam.nl/varen/">https://maps.amsterdam.nl/varen/</a></p>
+<p>3.Amsterdam Boothuur B.V. (2023, 13 maart). Vaarroutes in Amsterdam -
+Amsterdam boothuur. Amsterdam Boothuur. <a
+href="https://amsterdamboothuur.nl/vaarroutes/">https://amsterdamboothuur.nl/vaarroutes/</a></p>
+<p>4.Mooyman, R. (2023). Waterkwaliteit Wildzwemplek bij Erasmuspark
+‘goed’. De Westkrant.
+https://www.dewestkrant.nl/waterkwaliteit-wildzwemplek-bij-erasmuspark-goed/</p>
+<p>5.Kwaliteitsklasse: waterkwaliteit in de laatste vier jaar |
+Zwemwater.nl. (n.d.). <a
+href="https://www.zwemwater.nl/kwaliteitsklasse#goed">https://www.zwemwater.nl/kwaliteitsklasse#goed</a></p>
+<p>6.Controle van de waterkwaliteit | Zwemwater.nl. (n.d.). <a
+href="https://www.zwemwater.nl/schoon_water_kwaliteit">https://www.zwemwater.nl/schoon_water_kwaliteit</a></p>
+<p>7.V.d. Bent, K. M., &amp; Balster, W. A. (2022). Actualisatie
+zwemwaterprofiel: De Grote Soeekweide Amsterdamse Bos. In Zwemwater.nl
+(DIG-10260). Hoogheemraadschao van Rijnland. <a
+href="https://register.zwemwater.nl/zwr/api/files/8137640">https://register.zwemwater.nl/zwr/api/files/8137640</a></p>
+<p>8.Gemeente Amsterdam. (2022). Zwemmen &amp; zomerrecreatie aan het
+water: Ambtelijk handboek. <a
+href="https://openresearch.amsterdam/image/2022/4/1/ambtelijk_handboek_zwemmen_en_zomerrecreatie_aan_het_water.pdf">https://openresearch.amsterdam/image/2022/4/1/ambtelijk_handboek_zwemmen_en_zomerrecreatie_aan_het_water.pdf</a></p>
 
 <div class="footer">
   <h2>Footer</h2>
